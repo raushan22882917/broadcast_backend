@@ -1,0 +1,5 @@
+Flask
+requests
+kafka-python
+youtube-transcript-api
+gunicorn
