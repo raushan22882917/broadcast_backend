@@ -4,7 +4,7 @@ from utils.fact_checker import fact_check
 from utils.transcript_fetcher import fetch_transcript
 from flask_cors import CORS
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 @app.route('/api/transcript', methods=['GET'])
 def get_transcript():
     video_id = request.args.get('video_id')
