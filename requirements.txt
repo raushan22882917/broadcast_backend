@@ -1,5 +1,5 @@
 Flask
 requests
 pylivestream
-youtube-transcript-api
+flask_cors
 gunicorn
