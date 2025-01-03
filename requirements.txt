@@ -1,5 +1,5 @@
 Flask
 requests
-kafka-python
+pylivestream
 youtube-transcript-api
 gunicorn
