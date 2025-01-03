@@ -1,6 +1,7 @@
 Flask
 requests
 gunicorn
+youtube-transcript-api
 
 # If using Flask with Socket.IO for streaming
 flask-socketio
