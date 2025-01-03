@@ -1,5 +1,11 @@
 Flask
 requests
-kafka-python
-youtube-transcript-api
 gunicorn
+
+# If using Flask with Socket.IO for streaming
+flask-socketio
+eventlet
+
+# Additional dependencies for your utils modules (if required):
+# SomeLibraryForFactChecking
+# SomeLibraryForTranscriptFetching
