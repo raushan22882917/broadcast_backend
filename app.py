@@ -1,22 +1,20 @@
 from flask import Flask, request, jsonify, stream_with_context, Response
-from utils.transcript_fetcher import fetch_transcript
 from utils.live_transcript_stream import stream_live_transcript
 from utils.fact_checker import fact_check
-
+from utils.transcript_fetcher import fetch_transcript
 app = Flask(__name__)
 
 @app.route('/api/transcript', methods=['GET'])
 def get_transcript():
-    video_url = request.args.get('videoUrl')
-    if not video_url:
-        return jsonify({"error": "Video URL is required"}), 400
+    video_id = request.args.get('video_id')
+    if not video_id:
+        return jsonify({"error": "Video ID is required"}), 400
 
     try:
-        transcript = fetch_transcript(video_url)
+        transcript = fetch_transcript(video_id)
         return jsonify({"transcripts": transcript})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
 
 
 @app.route('/api/liveTranscript', methods=['GET'])
